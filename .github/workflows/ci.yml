@@ -50,6 +50,7 @@ jobs:
             --container-name build-artifacts \
             --name tf-demo-python-hello-world/tf-demo-python-hello-world-${{ github.sha }}.zip \
             --file tf-demo-python-hello-world-${{ github.sha }}.zip \
+            --auth-mode login \
             --overwrite
           
           # Upload as 'latest' for easy CD pipeline consumption
@@ -58,6 +59,7 @@ jobs:
             --container-name build-artifacts \
             --name tf-demo-python-hello-world/tf-demo-python-hello-world-latest.zip \
             --file tf-demo-python-hello-world-${{ github.sha }}.zip \
+            --auth-mode login \
             --overwrite
           
           echo "Package uploaded: tf-demo-python-hello-world-${{ github.sha }}.zip"
