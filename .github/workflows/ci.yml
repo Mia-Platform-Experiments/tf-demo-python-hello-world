@@ -47,7 +47,7 @@ jobs:
           # Upload with commit SHA for traceability
           az storage blob upload \
             --account-name ${{ secrets.AZURE_HCPTFDEMO_STORAGE_ACCOUNT }} \
-            --container-name build-artifacts \
+            --container-name hcptfdemo-artifacts \
             --name tf-demo-python-hello-world/tf-demo-python-hello-world-${{ github.sha }}.zip \
             --file tf-demo-python-hello-world-${{ github.sha }}.zip \
             --auth-mode login \
@@ -56,11 +56,11 @@ jobs:
           # Upload as 'latest' for easy CD pipeline consumption
           az storage blob upload \
             --account-name ${{ secrets.AZURE_HCPTFDEMO_STORAGE_ACCOUNT }} \
-            --container-name build-artifacts \
+            --container-name hcptfdemo-artifacts \
             --name tf-demo-python-hello-world/tf-demo-python-hello-world-latest.zip \
             --file tf-demo-python-hello-world-${{ github.sha }}.zip \
             --auth-mode login \
             --overwrite
           
           echo "Package uploaded: tf-demo-python-hello-world-${{ github.sha }}.zip"
-          echo "Latest alias: https://${{ secrets.AZURE_HCPTFDEMO_STORAGE_ACCOUNT }}.blob.core.windows.net/build-artifacts/tf-demo-python-hello-world/tf-demo-python-hello-world-latest.zip"
+          echo "Latest alias: https://${{ secrets.AZURE_HCPTFDEMO_STORAGE_ACCOUNT }}.blob.core.windows.net/hcptfdemo-artifacts/tf-demo-python-hello-world/tf-demo-python-hello-world-latest.zip"
