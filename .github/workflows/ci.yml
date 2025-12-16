@@ -31,11 +31,7 @@ jobs:
       
       - name: Create deployment package
         run: |
-          mkdir -p dist
-          cp -r app.py requirements.txt dist/
-          pip install -r requirements.txt -t dist/
-          cd dist
-          zip -r ../tf-demo-python-hello-world-${{ github.sha }}.zip .
+          zip tf-demo-python-hello-world-${{ github.sha }}.zip app.py requirements.txt
       
       - name: Azure Login
         uses: azure/login@v2
