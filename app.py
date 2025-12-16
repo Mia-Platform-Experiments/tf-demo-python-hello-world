@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return jsonify({
-        'message': 'Hello World from Python!',
+        'message': 'Hello Mia-Platform from Python!',
         'timestamp': datetime.utcnow().isoformat(),
         'version': '1.0.0'
     })
