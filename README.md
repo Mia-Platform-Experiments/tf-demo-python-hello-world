@@ -24,13 +24,13 @@ Simple Python Flask hello world application for Azure App Service deployment.
 3. **Test the application:**
    ```bash
    # Hello endpoint
-   curl http://localhost:8000/
+   curl http://localhost:80/
    
    # Health check
-   curl http://localhost:8000/health
+   curl http://localhost:80/health
    ```
 
-The server runs on port `8000` by default (or the port specified in `PORT` environment variable).
+The server runs on port `80` by default (or the port specified in `PORT` environment variable).
 
 ### Expected Response
 
